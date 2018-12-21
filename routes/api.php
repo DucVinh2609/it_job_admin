@@ -200,6 +200,11 @@ Route::get('admin_post',[
 	'as'=>'admin_post',
 	'uses'=>'PostController@getPosts'
 ]);
+Route::get('admin_post_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_post_api',
+	'uses'=>'PostController@getPostsAPI'
+]);
 
 
 Route::get('admin_post/add',[
