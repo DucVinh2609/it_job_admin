@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IT-Jobs Admin  | Edit Post</title>
+    <title>IT-Jobs Admin  | Edit Location</title>
     @include("viewAdmin.elements.stylesheet")
 
 </head>
@@ -59,7 +59,7 @@
     <div class="content-wrapper" id="pjax-container">
         <section class="content-header">
             <h1>
-                Edit Post
+                Edit Location
                 <small> </small>
             </h1>
 
@@ -78,13 +78,13 @@
 
                     <div class="box-tools">
                         <div class="btn-group pull-right" style="margin-right: 5px">
-                            <a href="{!! url('/api/admin_post/') !!}" class="btn btn-sm btn-default" title="List"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;List</span></a>
+                            <a href="{!! url('/api/admin_skill/') !!}" class="btn btn-sm btn-default" title="List"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;List</span></a>
                         </div>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form method="POST" action="{!! url('/api/admin_post/edit',$data['id']) !!}"  enctype="multipart/form-data" class="form-horizontal">
+                <form method="POST" action="{!! url('/api/admin_location/edit',$data['id']) !!}"  enctype="multipart/form-data" class="form-horizontal">
 
                     <div class="box-body">
 
@@ -93,7 +93,7 @@
 
                             <div class="form-group  ">
 
-                                <label for="Title" class="col-sm-2  control-label">Title</label>
+                                <label for="Title" class="col-sm-2  control-label">Name Location</label>
 
                                 <div class="col-sm-8">
 
@@ -102,170 +102,15 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                         
-                                        {!! Form::text('txtTitle', $data->Title, array('class' => 'form-control name')) !!}
+                                        {!! Form::text('txtNameLocation', $data->name, array('class' => 'form-control name')) !!}
                                         
                                     </div>
 
                                     
                                 </div>
                             </div>
-                            <div class="form-group  ">
-
-                                <label for="Description" class="col-sm-2  control-label">Description</label>
-
-                                <div class="col-sm-8">
-
-                                   {!! Form::textarea('txtDescription', $data->Description, array('class' => 'form-control comment', 'rows' => 5)) !!}
-
-                               </div>
-                           </div>
-                           <div class="form-group  ">
-
-                            <label for="requirement" class="col-sm-2  control-label">Requirement</label>
-
-                            <div class="col-sm-8">
-                                
-                                {!! Form::textarea('txtRequirement', $data->requirement, array('class' => 'form-control comment', 'rows' => 5)) !!}
-
-                            </div>
+                            
                         </div>
-
-
-                        <div class="form-group  ">
-
-                            <label for="Salary" class="col-sm-2  control-label">Salary</label>
-
-                            <div class="col-sm-8">
-
-
-                                <div class="input-group">
-
-                                    <span class="input-group-addon">$</span>
-
-                                    <input style="width: 120px" type="text"  name="txtSalary" value="{!! old('txtSalary',isset($data)? $data['Salary']: null) !!}" class="form-control price"  />
-
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="form-group  ">
-
-                            <label for="Amount_of_people" class="col-sm-2  control-label">Amount of people</label>
-
-                            <div class="col-sm-8">
-
-
-                                <div class="input-group">
-
-                                    <span class="input-group-addon">People</span>
-
-                                    <input style="width: 85px" type="text"  name="txtAmount_of_people" value="{!! old('txtAmount_of_people',isset($data)? $data['Amount_of_people']: null) !!}" class="form-control price"  />
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="form-group  ">
-
-                            <label for="Start_day" class="col-sm-2  control-label">Date start</label>
-
-                            <div class="col-sm-8">
-
-
-                                <div class="input-group">
-
-                                    <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-
-                                    <input style="width: 160px" type="text" name="dateStart_day" value="{!! old('dateStart_day',isset($data)? $data['Start_day']: null) !!}" class="form-control date_start"/>
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="form-group  ">
-
-                            <label for="End_day" class="col-sm-2  control-label">Date end</label>
-
-                            <div class="col-sm-8">
-
-
-                                <div class="input-group">
-
-                                    <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-
-                                    <input style="width: 160px" type="text"  name="dateEnd_day" value="{!! old('dateEnd_day',isset($data)? $data['End_day']: null) !!}" class="form-control date_end" />
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="form-group  ">
-
-                                <label for="Title" class="col-sm-2  control-label">ID Skill</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-                                        
-                                        {!! Form::text('txtIDSkill', $data->id_skill, array('class' => 'form-control name')) !!}
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="Title" class="col-sm-2  control-label">ID Employer</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-                                        
-                                        {!! Form::text('txtIDEmployer', $data->id_employer, array('class' => 'form-control name')) !!}
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                            <label for="End_day" class="col-sm-2  control-label">Post Time</label>
-
-                            <div class="col-sm-8">
-
-
-                                <div class="input-group">
-
-                                    <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-
-                                    <input style="width: 160px" type="text"  name="post_time" value="{!! old('post_time',isset($data)? $data['post_time']: null) !!}" class="form-control date_end" />
-
-
-                                </div>
-
-
-                            </div>
-                        </div>
-
 
 
                     </div>

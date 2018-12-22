@@ -110,6 +110,7 @@
                                 <th>Location</th>
                                 <th>Image Avatar</th>
                                 <th>Image Cover</th>
+                                <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -121,19 +122,22 @@
                                     {{ $employers-> id }}
                                 </td>
                                 <td >
-                                    {{ $employers-> Name }}
+                                    {{ $employers-> name }}
                                 </td>
                                 <td >
                                     {{ $employers-> Description }}
                                 </td>
                                 <td >
-                                    {{ $employers-> id_Location }}
+                                    {{ $employers-> id_location }}
                                 </td>
                                 <td >
                                     {{ $employers-> url_avatar}}
                                 </td>
                                 <td >
                                     {{ $employers-> url_bia }}
+                                </td>
+                                <td >
+                                    {{ $employers-> email}}
                                 </td>
                                 
                                 <td >

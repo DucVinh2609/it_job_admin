@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IT-Jobs Admin  | Skill manager</title>
+    <title>IT-Jobs Admin  | Applied Job</title>
     @include("viewAdmin.elements.stylesheet")
 
 </head>
@@ -66,7 +66,7 @@
     <div class="content-wrapper" id="pjax-container">
         <section class="content-header">
             <h1>
-                Skill manager
+                Applied Job 
                 <small> </small>
             </h1>
 
@@ -86,11 +86,7 @@
 
 
 
-                        <div class="btn-group pull-right" style="margin-right: 10px">
-                            <a href="{!! url('/api/admin_skill/add') !!}" class="btn btn-sm btn-success" title="New">
-                                <i class="fa fa-save"></i><span class="hidden-xs">&nbsp;&nbsp;New</span>
-                            </a>
-                        </div>
+                        
 
                     </div>
                     <span>
@@ -158,30 +154,24 @@
                                         <tr>
 
                                             <th>ID<a class="fa fa-fw fa-sort" href="{!! url('/api/admin_post') !!}?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
-                                            <th>Name Skill</th>
-                                            <th>Action</th>
+                                            <th>ID Post</th>
+                                            <th>ID User</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach($Skill as $skills)
+                                        @foreach($AppliedJob as $appliedJobs)
                                         <tr >
 
                                             <td >
-                                                {{ $skills-> id }}
+                                                {{ $appliedJobs-> id }}
                                             </td>
                                             <td >
-                                                {{ $skills-> name }}
+                                                {{ $appliedJobs-> id_post }}
                                             </td>
-                                            
                                             <td >
-                                                <a title="Show Customer detail" href="{!! url('/api/admin_skill/edit',$skills['id']) !!}">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>
-                                                <a href="{!! url('/api/admin_skill/delete',$skills['id']) !!}"  >
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
+                                                {{ $appliedJobs-> id_user }}
                                             </td>
                                         </tr>
                                         @endforeach

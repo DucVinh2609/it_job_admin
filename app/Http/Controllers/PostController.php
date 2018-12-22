@@ -41,6 +41,9 @@ class PostController extends Controller
         $post->Amount_of_people=$req->txtAmount_of_people;
         $post->Start_day=$req->dateStart_day;
         $post->End_day=$req->dateEnd_day;
+        $post->id_skill=$req->txtIDSkill;
+        $post->id_employer=$req->txtIDEmployer;
+        $post->post_time=$req->post_time;
         $post->save();
         return redirect()->action('PostController@getPosts')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete add Post']);
     }
@@ -53,7 +56,7 @@ class PostController extends Controller
 
     public function getEditPost($id){
         $data=posts::find($id);
-        $parent=posts::select('id','Title','Description','requirement','Salary','Amount_of_people','Start_day','End_day')->get()->toArray();
+        $parent=posts::select('id','Title','Description','requirement','Salary','Amount_of_people','Start_day','End_day','id_skill','id_employer','post_time')->get()->toArray();
         return view('viewAdmin.editPost',compact('data','parent','id'));
     }
 
@@ -66,6 +69,9 @@ class PostController extends Controller
         $post->Amount_of_people=$req->get('txtAmount_of_people');
         $post->Start_day=$req->get('dateStart_day');
         $post->End_day=$req->get('dateEnd_day');
+        $post->id_skill=$req->get('txtIDSkill');
+        $post->id_employer=$req->get('txtIDEmployer');
+        $post->post_time=$req->get('post_time');
         $post->save();
         return redirect()->action('PostController@getPosts')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete update Post']);
 

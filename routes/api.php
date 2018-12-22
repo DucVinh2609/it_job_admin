@@ -241,25 +241,30 @@ Route::get('admin_skill',[
 	'as'=>'admin_skill',
 	'uses'=>'SkillController@getSkill'
 ]);
+Route::get('admin_skill_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_skill_api',
+	'uses'=>'SkillController@getSkillAPI'
+]);
 
 Route::get('admin_skill/add',[
-	'as'=>'getaddPost',
-	'uses'=>'SkillController@getAddPost'
+	'as'=>'getaddSkill',
+	'uses'=>'SkillController@getAddSkill'
 ]);
 
 Route::post('admin_skill/add',[
-	'as'=>'postaddPost',
-	'uses'=>'SkillController@postAddPost'
+	'as'=>'postaddSkill',
+	'uses'=>'SkillController@postAddSkill'
 ]);
 
 Route::get('admin_skill/edit/{id}',[
-	'as'=>'geteditPost',
-	'uses'=>'SkillController@getEditPost'
+	'as'=>'geteditSkill',
+	'uses'=>'SkillController@getEditSkill'
 ]);
 
 Route::post('admin_skill/edit/{id}',[
-	'as'=>'posteditPost',
-	'uses'=>'SkillController@postEditPost'
+	'as'=>'posteditSkill',
+	'uses'=>'SkillController@postEditSkill'
 ]);
 
 Route::get('admin_skill/delete/{id}',[
@@ -268,6 +273,45 @@ Route::get('admin_skill/delete/{id}',[
 ]);
 
 // end skills
+
+// Location
+
+Route::get('admin_location',[
+	'as'=>'admin_location',
+	'uses'=>'ControllerLocation@getLocation'
+]);
+Route::get('admin_location_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_location_api',
+	'uses'=>'ControllerLocation@getLocationAPI'
+]);
+
+Route::get('admin_location/add',[
+	'as'=>'getaddLocation',
+	'uses'=>'ControllerLocation@getAddLocation'
+]);
+
+Route::post('admin_location/add',[
+	'as'=>'postaddLocation',
+	'uses'=>'ControllerLocation@postAddLocation'
+]);
+
+Route::get('admin_location/edit/{id}',[
+	'as'=>'geteditLocation',
+	'uses'=>'ControllerLocation@getEditLocation'
+]);
+
+Route::post('admin_location/edit/{id}',[
+	'as'=>'posteditLocation',
+	'uses'=>'ControllerLocation@postEditLocation'
+]);
+
+Route::get('admin_location/delete/{id}',[
+	'as'=>'getdeleteLocation',
+	'uses'=>'ControllerLocation@getDeleteLocation'
+]);
+
+// end Location
 
 // Employer
 
@@ -302,6 +346,19 @@ Route::get('admin_employer/delete/{id}',[
 ]);
 
 // end employer
+
+// applied job
+Route::get('admin_applied_job',[
+	'middleware' => 'cors',
+	'as'=>'admin_applied_job',
+	'uses'=>'ControllerAppliedJob@getAppliedJob'
+]);
+Route::get('admin_applied_job_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_applied_job-api',
+	'uses'=>'ControllerAppliedJob@getAppliedJobAPI'
+]);
+// end applied job
 
 // Product
 Route::get('shop_product',[

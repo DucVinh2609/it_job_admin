@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IT-Jobs Admin  | Add Post</title>
+    <title>IT-Jobs Admin  | Add Location</title>
     @include("viewAdmin.elements.stylesheet")
 
 </head>
@@ -59,7 +59,7 @@
     <div class="content-wrapper" id="pjax-container">
         <section class="content-header">
             <h1>
-                Add Post
+                Add Location
                 <small> </small>
             </h1>
 
@@ -78,13 +78,13 @@
 
                     <div class="box-tools">
                         <div class="btn-group pull-right" style="margin-right: 5px">
-                            <a href="{!! url('/api/admin_post/') !!}" class="btn btn-sm btn-default" title="List"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;List</span></a>
+                            <a href="{!! url('/api/admin_location/') !!}" class="btn btn-sm btn-default" title="List"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;List</span></a>
                         </div>
                     </div>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="{!! url('/api/admin_post/add') !!}" method="POST" enctype="multipart/form-data" class="form-horizontal" >
+                <form action="{!! url('/api/admin_location/add') !!}" method="POST" enctype="multipart/form-data" class="form-horizontal" >
 
                     <div class="box-body">
 
@@ -93,7 +93,7 @@
 
                             <div class="form-group  ">
 
-                                <label for="Title" class="col-sm-2  control-label">Title</label>
+                                <label for="Title" class="col-sm-2  control-label">Name Location</label>
 
                                 <div class="col-sm-8">
 
@@ -102,175 +102,16 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                         
-                                        <input type="text"  name="txtTitle" value="" class="form-control name" placeholder="Input Title" />
+                                        <input type="text"  name="txtNameLocation" value="" class="form-control name" placeholder="Input Name Location" />
 
                                         
                                     </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="Description" class="col-sm-2  control-label">Description</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <textarea name="txtDescription" class="form-control comment" rows="5" placeholder="Input Description" autofocus ></textarea>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="requirement" class="col-sm-2  control-label">Requirement</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <textarea name="txtRequirement" class="form-control comment" rows="5" placeholder="Input Requirement" autofocus ></textarea>
 
                                     
                                 </div>
                             </div>
                             
-                            
-                            <div class="form-group  ">
-
-                                <label for="Salary" class="col-sm-2  control-label">Salary</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon">$</span>
-                                        
-                                        <input style="width: 120px" type="text"  name="txtSalary" value="0" class="form-control price" placeholder="Input Salary" />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-
-                            <div class="form-group  ">
-
-                                <label for="Amount_of_people" class="col-sm-2  control-label">Amount of people</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon">People</span>
-
-                                        <input style="width: 85px" type="text"  name="txtAmount_of_people" value="" class="form-control price"  />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-
-                            <div class="form-group  ">
-
-                                <label for="Start_day" class="col-sm-2  control-label">Date start</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-                                        
-                                        <input style="width: 160px" type="text" name="dateStart_day" value="" class="form-control date_start" placeholder="Input Date start" />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="End_day" class="col-sm-2  control-label">Date end</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-                                        
-                                        <input style="width: 160px" type="text"  name="dateEnd_day" value="" class="form-control date_end" placeholder="Input Date end" />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="Title" class="col-sm-2  control-label">ID Skill</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-                                        
-                                        <input type="text"  name="txtIDSkill" value="" class="form-control name" placeholder="Input ID Skill" />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="Title" class="col-sm-2  control-label">ID Employer</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-                                        
-                                        <input type="text"  name="txtIDEmployer" value="" class="form-control name" placeholder="Input ID Employer" />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="Start_day" class="col-sm-2  control-label">Post Time</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-                                        
-                                        <input style="width: 160px" type="text" name="post_time" value="" class="form-control date_start" placeholder="Input Post Time" />
-
-                                        
-                                    </div>
-
-                                    
-                                </div>
-                            </div>
+                    
 
                             
 

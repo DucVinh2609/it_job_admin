@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Validator;
 
 
-class SkillRequest extends FormRequest
+class LocationRequest extends FormRequest
 {
         /**
      * Determine if the user is authorized to make this request.
@@ -26,14 +26,14 @@ class SkillRequest extends FormRequest
     public function rules()
     {
         return [
-            'txtNameSkill'    =>  'required'       
+            'txtNameLocation'    =>  'required'       
             
         ];
     }
 
     public function messages(){
         return [
-            'txtNameSkill.required'  =>  'Please enter name Skill '
+            'txtNameLocation.required'  =>  'Please enter name location '
       
         ];
     }

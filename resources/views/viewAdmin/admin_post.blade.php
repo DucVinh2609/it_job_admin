@@ -165,6 +165,9 @@
                                             <th>Amount of people</th>
                                             <th>Start day</th>
                                             <th>End day</th>
+                                            <th>ID Skill</th>
+                                            <th>ID Employer</th>
+                                            <th>Post Time</th>
 
                                         </tr>
                                     </thead>
@@ -196,6 +199,15 @@
                                             </td>
                                             <td >
                                                 {{ $post-> End_day }}
+                                            </td>
+                                            <td >
+                                                {{ $post-> id_skill }}
+                                            </td>
+                                            <td >
+                                                {{ $post-> id_employer }}
+                                            </td>
+                                            <td >
+                                                {{ $post-> post_time }}
                                             </td>
                                             <td >
                                                 <a title="Show Customer detail" href="{!! url('/api/admin_post/edit',$post['id']) !!}">

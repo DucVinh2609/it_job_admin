@@ -35,6 +35,9 @@ class ControllerEmployer extends Controller
         $employer->id_Location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
+        $employer->id_employer_detail=$req->txt_IDEmployerDetail;
+        $employer->email=$req->txt_Email;
+        $employer->password=$req->txt_Password;
         $req->file('EmployerImageAvatar')->move('images/',$file_image_avatar);
         $req->file('EmployerImageCover')->move('images/',$file_image_cover);
         $employer->save();
@@ -44,12 +47,12 @@ class ControllerEmployer extends Controller
     public function getDeleteEmployer($id){
         $employer=employer::find($id);
         $employer->delete($id);
-        return redirect()->action('ControllerEmployer@getEmployers')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete delete Post']);
+        return redirect()->action('ControllerEmployer@getEmployers')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete delete Employer']);
     }
 
     public function getEditEmployer($id){
         $data=employer::find($id);
-        $parent=employer::select('id','Name','Description','id_Location','url_avatar','url_bia')->get()->toArray();
+        $parent=employer::select('id','Name','Description','id_Location','url_avatar','url_bia','id_employer_detail','email','password')->get()->toArray();
         return view('viewAdmin.editEmployer',compact('data','parent','id'));
     }
 
@@ -63,10 +66,13 @@ class ControllerEmployer extends Controller
         $employer->id_Location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
+        $employer->id_employer_detail=$req->txt_IDEmployerDetail;
+        $employer->email=$req->txt_Email;
+        $employer->password=$req->txt_Password;
         $req->file('EmployerImageAvatar')->move('images/',$file_image_avatar);
         $req->file('EmployerImageCover')->move('images/',$file_image_cover);
         $employer->save();
-        return redirect()->action('ControllerEmployer@getEmployers')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete add employer']);
+        return redirect()->action('ControllerEmployer@getEmployers')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete edit employer']);
 
     }
 }

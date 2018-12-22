@@ -32,7 +32,10 @@ class PostRequest extends FormRequest
             'txtSalary'    =>  'required',
             'txtAmount_of_people'    =>  'required',
             'dateStart_day'    =>  'required',
-            'dateEnd_day'    =>  'required'
+            'dateEnd_day'    =>  'required',
+            'txtIDSkill'    =>  'required',
+            'txtIDEmployer'    =>  'required',
+            'post_time'    =>  'required'
 
       
         ];
@@ -46,7 +49,10 @@ class PostRequest extends FormRequest
             'txtSalary.required'  =>  'Please enter salary ',
             'txtAmount_of_people.required'  =>  'Please enter Amount of people ',
             'dateStart_day.required'  =>  'Please enter Start day ',
-            'dateEnd_day.required'   => 'Plaese enter End day'
+            'dateEnd_day.required'   => 'Plaese enter End day',
+            'txtIDSkill.required'  =>  'Please enter ID Skill ',
+            'txtIDEmployer.required'  =>  'Please enter ID Employer ',
+            'post_time.required'  =>  'Please enter Post Time '
          
 
 

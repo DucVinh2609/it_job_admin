@@ -109,7 +109,7 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
 
-                                        {!! Form::text('txt_EmployerName', $data->Name, array('class' => 'form-control name')) !!}
+                                        {!! Form::text('txt_EmployerName', $data->name, array('class' => 'form-control name')) !!}
 
 
                                     </div>
@@ -149,7 +149,7 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
 
-                                        {!! Form::text('txt_EmployerLocation', $data->id_Location, array('class' => 'form-control name')) !!}
+                                        {!! Form::text('txt_EmployerLocation', $data->id_location, array('class' => 'form-control name')) !!}
 
 
                                     </div>
@@ -180,6 +180,63 @@
 
 
                                     <input type="file" class="image"  name="EmployerImageCover" value="{!! old('EmployerImageCover',isset($data)? $data['url_bia']: null) !!}" />
+
+
+                                </div>
+                            </div>
+                            <div class="form-group  ">
+
+                                <label for="en__description" class="col-sm-2  control-label">ID Employer Detail</label>
+
+                                <div class="col-sm-8">
+
+
+                                    <div class="input-group">
+
+                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
+
+                                        {!! Form::text('txt_IDEmployerDetail', $data->id_employer_detail, array('class' => 'form-control name')) !!}
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="form-group  ">
+
+                                <label for="en__description" class="col-sm-2  control-label">Email</label>
+
+                                <div class="col-sm-8">
+
+
+                                    <div class="input-group">
+
+                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
+
+                                        {!! Form::text('txt_Emial', $data->email, array('class' => 'form-control name')) !!}
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="form-group  ">
+
+                                <label for="en__description" class="col-sm-2  control-label">Password</label>
+
+                                <div class="col-sm-8">
+
+
+                                    <div class="input-group">
+
+                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
+
+                                        {!! Form::text('txt_Password', $data->password, array('class' => 'form-control name')) !!}
+
+
+                                    </div>
 
 
                                 </div>

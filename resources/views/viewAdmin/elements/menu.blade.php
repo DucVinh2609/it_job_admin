@@ -78,7 +78,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{!! url('/api/admin_location/') !!}">
               <i class="fa fa-paw">
               </i>
               <span>Location
@@ -122,10 +122,10 @@
             </a>
           </li>
           <li>
-            <a href="{!! url('/api/admin_post/') !!}">
+            <a href="{!! url('/api/admin_applied_job/') !!}">
               <i class="fa fa-asterisk">
               </i>
-              <span>Post saved
+              <span>Post applied
               </span>
             </a>
           </li>
