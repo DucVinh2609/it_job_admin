@@ -22,6 +22,10 @@ class ControllerEmployer extends Controller
         $employer = employer::all();
       return view('viewAdmin.admin_employer',['employer' => $employer]);
     }
+    public function getEmployersAPI(){
+        $employer = employer::all();
+      return $employer;
+    }
     public function getAddEmployer(){
         return view('viewAdmin.addEmployer');
     }

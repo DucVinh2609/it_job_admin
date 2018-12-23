@@ -142,10 +142,18 @@
         </a>
         <ul class="treeview-menu">
           <li>
+            <a href="{!! url('/api/admin_employer/') !!}">
+              <i class="fa fa-user-md">
+              </i>
+              <span>Employer
+              </span>
+            </a>
+          </li>
+          <li>
             <a href="{{route('shop_customer')}}">
               <i class="fa fa-user-md">
               </i>
-              <span>Customer
+              <span>Candidate
               </span>
             </a>
           </li>

@@ -319,7 +319,11 @@ Route::get('admin_employer',[
 	'as'=>'admin_employer',
 	'uses'=>'ControllerEmployer@getEmployers'
 ]);
-
+Route::get('admin_employer_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_employer_api',
+	'uses'=>'ControllerEmployer@getEmployersAPI'
+]);
 Route::get('admin_employer/add',[
 	'as'=>'getaddEmployer',
 	'uses'=>'ControllerEmployer@getaddEmployer'
