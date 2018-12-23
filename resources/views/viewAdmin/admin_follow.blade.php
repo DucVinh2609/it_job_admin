@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IT-Jobs Admin  | Applied Job</title>
+    <title>IT-Jobs Admin  | Follow</title>
     @include("viewAdmin.elements.stylesheet")
 
 </head>
@@ -66,7 +66,7 @@
     <div class="content-wrapper" id="pjax-container">
         <section class="content-header">
             <h1>
-                Applied Job 
+                User follow Employer
                 <small> </small>
             </h1>
 
@@ -134,24 +134,24 @@
                                         <tr>
 
                                             <th>ID<a class="fa fa-fw fa-sort" href="{!! url('/api/admin_post') !!}?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
-                                            <th>ID Post</th>
                                             <th>ID User</th>
+                                            <th>ID Employer</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach($AppliedJob as $appliedJobs)
+                                        @foreach($follow as $follows)
                                         <tr >
 
                                             <td >
-                                                {{ $appliedJobs-> id }}
+                                                {{ $follows-> id }}
                                             </td>
                                             <td >
-                                                {{ $appliedJobs-> id_post }}
+                                                {{ $follows-> id_user }}
                                             </td>
                                             <td >
-                                                {{ $appliedJobs-> id_user }}
+                                                {{ $follows-> id_employer }}
                                             </td>
                                         </tr>
                                         @endforeach

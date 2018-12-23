@@ -32,32 +32,12 @@
       <li class="header">Menu
       </li>
       <li>
-        <a href="">
+        <a href="{!! url('/api/dashboard/') !!}">
           <i class="fa fa-bar-chart">
           </i>
           <span>Index
           </span>
         </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-coffee">
-          </i>
-          <span>CMS Manager
-          </span>
-          <i class="fa fa-angle-left pull-right">
-          </i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <a href="">
-              <i class="fa fa-file-powerpoint-o">
-              </i>
-              <span>Blog &amp; News
-              </span>
-            </a>
-          </li>
-        </ul>
       </li>
       <li class="treeview">
         <a href="#">
@@ -79,25 +59,9 @@
           </li>
           <li>
             <a href="{!! url('/api/admin_location/') !!}">
-              <i class="fa fa-paw">
+              <i class="fa fa-map-marker">
               </i>
               <span>Location
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="{{route('shop_product')}}">
-              <i class="fa fa-file-photo-o">
-              </i>
-              <span>Product manager
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="{{route('shop_brand')}}">
-              <i class="fa fa-bank">
-              </i>
-              <span>Brand
               </span>
             </a>
           </li>
@@ -143,15 +107,23 @@
         <ul class="treeview-menu">
           <li>
             <a href="{!! url('/api/admin_employer/') !!}">
-              <i class="fa fa-user-md">
+              <i class="fa fa-users">
               </i>
               <span>Employer
               </span>
             </a>
           </li>
           <li>
-            <a href="{{route('shop_customer')}}">
-              <i class="fa fa-user-md">
+            <a href="{!! url('/api/admin_employer_detail/') !!}">
+              <i class="fa fa-info-circle">
+              </i>
+              <span>Employer Detail
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="{!! url('/api/admin_candidate/') !!}">
+              <i class="fa fa-user">
               </i>
               <span>Candidate
               </span>
@@ -159,59 +131,27 @@
           </li>
         </ul>
       </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-star-half-empty">
-          </i>
-          <span>Marketing
-          </span>
-          <i class="fa fa-angle-left pull-right">
-          </i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <a href="{{route('dashboard')}}">
-              <i class="fa fa-rocket">
-              </i>
-              <span>Coupon &amp; khuyến mãi
-              </span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-ambulance">
-          </i>
-          <span>Shipping Manager
-          </span>
-          <i class="fa fa-angle-left pull-right">
-          </i>
-        </a>
-        <ul class="treeview-menu">
-          <li>
-            <a href="{{route('shop_shipping')}}">
-              <i class="fa fa-ambulance">
-              </i>
-              <span>Shipping
-              </span>
-            </a>
-          </li>
-        </ul>
-      </li>
       <li>
-        <a href="{{route('banner')}}">
-          <i class="fa fa-picture-o">
+        <a href="{!! url('/api/admin_follow/') !!}">
+          <i class="fa fa-thumbs-up">
           </i>
-          <span>Banner
+          <span>Follow
           </span>
         </a>
       </li>
       <li>
-        <a href="{{route('language')}}">
-          <i class="fa fa-pagelines">
+        <a href="{!! url('/api/admin_reviews/') !!}">
+          <i class="fa fa-comments-o">
           </i>
-          <span>Config Language
+          <span>Reviews
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="{!! url('/api/admin_contact/') !!}">
+          <i class="fa fa-fax">
+          </i>
+          <span>Contact of WEB 
           </span>
         </a>
       </li>

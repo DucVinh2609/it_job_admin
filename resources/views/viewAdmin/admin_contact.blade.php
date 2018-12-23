@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IT-Jobs Admin  | Applied Job</title>
+    <title>IT-Jobs Admin  | Contact of WEB</title>
     @include("viewAdmin.elements.stylesheet")
 
 </head>
@@ -48,7 +48,7 @@
                 }
             </style>
 
-            <form action="{!! url('/api/admin_skill/') !!}" method="get" class="search-form" pjax-container>
+            <form action="{!! url('/api/admin_contact/') !!}" method="get" class="search-form" pjax-container>
                 <div class="input-group input-group-sm ">
                     <input type="text" name="keyword" class="form-control" placeholder="Search order id, email, phone or name">
                     <span class="input-group-btn">
@@ -66,7 +66,7 @@
     <div class="content-wrapper" id="pjax-container">
         <section class="content-header">
             <h1>
-                Applied Job 
+                Contact of WEB
                 <small> </small>
             </h1>
 
@@ -79,11 +79,10 @@
         <section class="content">
 
 
-            <div class="row"><div class="col-md-12"><div class="box">
-
+            <div class="row"><div class="col-md-12"><div class="box">                
 
                 <div class="box-header with-border hide" id="filter-box">
-                    <form action="{!! url('/api/admin_post/') !!}" class="form-horizontal" pjax-container method="get">
+                    <form action="{!! url('/api/admin_location/') !!}" class="form-horizontal" pjax-container method="get">
 
                         <div class="row">
                             <div class="col-md-12">
@@ -134,24 +133,35 @@
                                         <tr>
 
                                             <th>ID<a class="fa fa-fw fa-sort" href="{!! url('/api/admin_post') !!}?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
-                                            <th>ID Post</th>
-                                            <th>ID User</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Address</th>
+                                            <th>Action</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach($AppliedJob as $appliedJobs)
+                                        @foreach($contact as $contacts)
                                         <tr >
 
                                             <td >
-                                                {{ $appliedJobs-> id }}
+                                                {{ $contacts-> id }}
                                             </td>
                                             <td >
-                                                {{ $appliedJobs-> id_post }}
+                                                {{ $contacts-> email }}
                                             </td>
                                             <td >
-                                                {{ $appliedJobs-> id_user }}
+                                                {{ $contacts-> phone }}
+                                            </td>
+                                            <td >
+                                                {{ $contacts-> address }}
+                                            </td>
+                                            
+                                            <td >
+                                                <a title="Show Customer detail" href="{!! url('/api/admin_contact/edit',$contacts['id']) !!}">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -162,36 +172,6 @@
 
 
 
-                            <div class="box-footer clearfix">
-                                Showing <b>1</b> to <b>20</b> of <b>40</b> entries<ul class="pagination pagination-sm no-margin pull-right">
-                                    <!-- Previous Page Link -->
-                                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
-
-                                    <!-- Pagination viewAdmin.elements -->
-                                    <!-- "Three Dots" Separator -->
-
-                                    <!-- Array Of Links -->
-                                    <li class="page-item active"><span class="page-link">1</span></li>
-                                    <li class="page-item"><a class="page-link" href="{!! url('/api/admin_post/') !!}?page=2">2</a></li>
-
-                                    <!-- Next Page Link -->
-                                    <li class="page-item"><a class="page-link" href="{!! url('/api/admin_post/') !!}?page=2" rel="next">&raquo;</a></li>
-                                </ul>
-
-                                <label class="control-label pull-right" style="margin-right: 10px; font-weight: 100;">
-
-                                    <small>Show</small>&nbsp;
-                                    <select class="input-sm grid-per-pager" name="per-page">
-                                        <option value="{!! url('/api/admin_post/') !!}?per_page=10" >10</option>
-                                        <option value="{!! url('/api/admin_post/') !!}?per_page=20" selected>20</option>
-                                        <option value="{!! url('/api/admin_post/') !!}?per_page=30" >30</option>
-                                        <option value="{!! url('/api/admin_post/') !!}?per_page=50" >50</option>
-                                        <option value="{!! url('/api/admin_post/') !!}?per_page=100" >100</option>
-                                    </select>
-                                    &nbsp;<small>entries</small>
-                                </label>
-
-                            </div>
                             <!-- /.box-body -->
                         </div>
                     </div>

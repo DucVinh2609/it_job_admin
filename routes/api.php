@@ -205,6 +205,11 @@ Route::get('admin_post_api',[
 	'as'=>'admin_post_api',
 	'uses'=>'PostController@getPostsAPI'
 ]);
+Route::get('admin_post_api/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getpostsAPIaccordingID',
+	'uses'=>'PostController@getPostsAPIaccordingID'
+]);
 
 
 Route::get('admin_post/add',[
@@ -324,6 +329,17 @@ Route::get('admin_employer_api',[
 	'as'=>'admin_employer_api',
 	'uses'=>'ControllerEmployer@getEmployersAPI'
 ]);
+Route::get('admin_employer_api/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getemployersAPIaccordingID',
+	'uses'=>'ControllerEmployer@getEmployersAPIaccordingID'
+]);
+Route::get('admin_reviews_according_IDemployer/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getreviewsAPIaccordingID',
+	'uses'=>'ControllerEmployer@getReviewsAPIaccordingID'
+]);
+
 Route::get('admin_employer/add',[
 	'as'=>'getaddEmployer',
 	'uses'=>'ControllerEmployer@getaddEmployer'
@@ -351,6 +367,82 @@ Route::get('admin_employer/delete/{id}',[
 
 // end employer
 
+// Employer detail
+
+Route::get('admin_employer_detail',[
+	'as'=>'admin_employer_detail',
+	'uses'=>'ControllerEmployerDetail@getEmployerDetails'
+]);
+Route::get('admin_employer_detail_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_employer_detail_api',
+	'uses'=>'ControllerEmployerDetail@getEmployerDetailsAPI'
+]);
+Route::get('admin_employer_detail/add',[
+	'as'=>'getaddEmployerDetail',
+	'uses'=>'ControllerEmployerDetail@getaddEmployerDetail'
+]);
+
+Route::post('admin_employer_detail/add',[
+	'as'=>'postaddEmployerDetail',
+	'uses'=>'ControllerEmployerDetail@postAddEmployerDetail'
+]);
+
+Route::get('admin_employer_detail/edit/{id}',[
+	'as'=>'geteditEmployerDetail',
+	'uses'=>'ControllerEmployerDetail@getEditEmployerDetail'
+]);
+
+Route::post('admin_employer_detail/edit/{id}',[
+	'as'=>'posteditEmployerDetail',
+	'uses'=>'ControllerEmployerDetail@postEditEmployerDetail'
+]);
+
+Route::get('admin_employer_detail/delete/{id}',[
+	'as'=>'getdeleteEmployerDetail',
+	'uses'=>'ControllerEmployerDetail@getDeleteEmployerDetail'
+]);
+
+// end employer detail
+
+// Candidate
+
+Route::get('admin_candidate',[
+	'as'=>'admin_candidate',
+	'uses'=>'ControllerCandidate@getCandidates'
+]);
+Route::get('admin_candidate_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_candidate_api',
+	'uses'=>'ControllerCandidate@getCandidatesAPI'
+]);
+Route::get('admin_candidate/add',[
+	'as'=>'getaddCandidate',
+	'uses'=>'ControllerCandidate@getaddCandidate'
+]);
+
+Route::post('admin_candidate/add',[
+	'as'=>'postaddCandidate',
+	'uses'=>'ControllerCandidate@postAddCandidate'
+]);
+
+Route::get('admin_candidate/edit/{id}',[
+	'as'=>'geteditCandidate',
+	'uses'=>'ControllerCandidate@getEditCandidate'
+]);
+
+Route::post('admin_candidate/edit/{id}',[
+	'as'=>'posteditCandidate',
+	'uses'=>'ControllerCandidate@postEditCandidate'
+]);
+
+Route::get('admin_candidate/delete/{id}',[
+	'as'=>'getdeleteCandidate',
+	'uses'=>'ControllerCandidate@getDeleteCandidate'
+]);
+
+// end employer
+
 // applied job
 Route::get('admin_applied_job',[
 	'middleware' => 'cors',
@@ -359,10 +451,67 @@ Route::get('admin_applied_job',[
 ]);
 Route::get('admin_applied_job_api',[
 	'middleware' => 'cors',
-	'as'=>'admin_applied_job-api',
+	'as'=>'admin_applied_job_api',
 	'uses'=>'ControllerAppliedJob@getAppliedJobAPI'
 ]);
 // end applied job
+
+// reviews
+Route::get('admin_reviews',[
+	'middleware' => 'cors',
+	'as'=>'admin_reviews',
+	'uses'=>'ControllerReviews@getReviews'
+]);
+Route::get('admin_reviews_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_reviews_api',
+	'uses'=>'ControllerReviews@getReviewsAPI'
+]);
+Route::get('admin_reviews_api/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getreviewsAPIaccordingID',
+	'uses'=>'ControllerReviews@getReviewsAPIaccordingID'
+]);
+// end reviews
+
+// follow
+Route::get('admin_follow',[
+	'middleware' => 'cors',
+	'as'=>'admin_follow',
+	'uses'=>'ControllerFollow@getFollows'
+]);
+Route::get('admin_follow_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_follow_api',
+	'uses'=>'ControllerFollow@getFollowsAPI'
+]);
+// end follow
+
+// Location
+
+Route::get('admin_contact',[
+	'as'=>'admin_contact',
+	'uses'=>'ControllerContact@getContact'
+]);
+Route::get('admin_contact_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_contact_api',
+	'uses'=>'ControllerContact@getContactAPI'
+]);
+
+Route::get('admin_contact/edit/{id}',[
+	'as'=>'geteditContact',
+	'uses'=>'ControllerContact@getEditContact'
+]);
+
+Route::post('admin_contact/edit/{id}',[
+	'as'=>'posteditContact',
+	'uses'=>'ControllerContact@postEditContact'
+]);
+
+
+
+// end Location
 
 // Product
 Route::get('shop_product',[

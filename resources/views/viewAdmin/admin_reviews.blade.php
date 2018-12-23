@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IT-Jobs Admin  | Applied Job</title>
+    <title>IT-Jobs Admin  | Reviews manager</title>
     @include("viewAdmin.elements.stylesheet")
 
 </head>
@@ -48,7 +48,7 @@
                 }
             </style>
 
-            <form action="{!! url('/api/admin_skill/') !!}" method="get" class="search-form" pjax-container>
+            <form action="{!! url('/api/admin_post/') !!}" method="get" class="search-form" pjax-container>
                 <div class="input-group input-group-sm ">
                     <input type="text" name="keyword" class="form-control" placeholder="Search order id, email, phone or name">
                     <span class="input-group-btn">
@@ -66,7 +66,7 @@
     <div class="content-wrapper" id="pjax-container">
         <section class="content-header">
             <h1>
-                Applied Job 
+                Reviews manager
                 <small> </small>
             </h1>
 
@@ -81,9 +81,8 @@
 
             <div class="row"><div class="col-md-12"><div class="box">
 
-
                 <div class="box-header with-border hide" id="filter-box">
-                    <form action="{!! url('/api/admin_post/') !!}" class="form-horizontal" pjax-container method="get">
+                    <form action="{!! url('/api/admin_reviews/') !!}" class="form-horizontal" pjax-container method="get">
 
                         <div class="row">
                             <div class="col-md-12">
@@ -132,27 +131,36 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-
+                                            
                                             <th>ID<a class="fa fa-fw fa-sort" href="{!! url('/api/admin_post') !!}?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
-                                            <th>ID Post</th>
-                                            <th>ID User</th>
+                                            <th>Content</th>
+                                            <th>Time</th>
+                                            <th>Rate</th>
+                                            <th>ID Employer</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach($AppliedJob as $appliedJobs)
+                                        @foreach($reviews as $review)
                                         <tr >
-
+                                            
                                             <td >
-                                                {{ $appliedJobs-> id }}
+                                                {{ $review-> id }}
                                             </td>
                                             <td >
-                                                {{ $appliedJobs-> id_post }}
+                                                {{ $review-> content }}
                                             </td>
                                             <td >
-                                                {{ $appliedJobs-> id_user }}
+                                                {{ $review-> time }}
                                             </td>
+                                            <td >
+                                                {{ $review-> star_rate }}
+                                            </td>
+                                            <td >
+                                                {{ $review-> id_employer }}
+                                            </td>
+                                           
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -197,42 +205,41 @@
                     </div>
                 </div>
 
-            </section>
-            <script data-exec-on-popstate>
+                </section>
+                <script data-exec-on-popstate>
 
-                $(function () {
+                    $(function () {
+                        
+                        $('.grid-refresh').on('click', function() {
+                            $.pjax.reload('#pjax-container');
+                            toastr.success('Refresh succeeded !');
+                        });
 
-                    $('.grid-refresh').on('click', function() {
-                        $.pjax.reload('#pjax-container');
-                        toastr.success('Refresh succeeded !');
+                        $('.5bcf397a10de5-filter-btn').click(function (e) {
+                            if ($('#filter-box').is(':visible')) {
+                                $('#filter-box').addClass('hide');
+                            } else {
+                                $('#filter-box').removeClass('hide');
+                            }
+                        });
+
+                        $('.grid-per-pager').on("change", function(e) {
+                            $.pjax({url: this.value, container: '#pjax-container'});
+                        });
+
                     });
+                </script>
+            </div>
 
-                    $('.5bcf397a10de5-filter-btn').click(function (e) {
-                        if ($('#filter-box').is(':visible')) {
-                            $('#filter-box').addClass('hide');
-                        } else {
-                            $('#filter-box').removeClass('hide');
-                        }
-                    });
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <strong>IT-Jobs</a></strong>
+            </footer>
 
-                    $('.grid-per-pager').on("change", function(e) {
-                        $.pjax({url: this.value, container: '#pjax-container'});
-                    });
-
-                });
-            </script>
         </div>
 
-        <!-- Main Footer -->
-        <footer class="main-footer">
-           
-            <strong>IT-Jobs</strong>
-        </footer>
-
-    </div>
-
-    @include("viewAdmin.elements.script")
+        @include("viewAdmin.elements.script")
 
 
-</body>
-</html>
+    </body>
+    </html>

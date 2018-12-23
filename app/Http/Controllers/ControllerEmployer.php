@@ -26,6 +26,14 @@ class ControllerEmployer extends Controller
         $employer = employer::all();
       return $employer;
     }
+    public function getEmployersAPIaccordingID($id){
+        $employer = employer::find($id);
+      return $employer;
+    }
+    public function getReviewsAPIaccordingID($id){
+        $reviews = employer::find($id)->reviews;
+      return $reviews;
+    }
     public function getAddEmployer(){
         return view('viewAdmin.addEmployer');
     }
@@ -34,9 +42,9 @@ class ControllerEmployer extends Controller
         $file_image_avatar=$req->file('EmployerImageAvatar')->getClientOriginalName();
         $file_image_cover=$req->file('EmployerImageCover')->getClientOriginalName();
         $employer=new employer;
-        $employer->Name=$req->txt_EmployerName;
+        $employer->name=$req->txt_EmployerName;
         $employer->Description=$req->txt_EmployerDecription;
-        $employer->id_Location=$req->txt_EmployerLocation;
+        $employer->id_location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
         $employer->id_employer_detail=$req->txt_IDEmployerDetail;
@@ -56,7 +64,7 @@ class ControllerEmployer extends Controller
 
     public function getEditEmployer($id){
         $data=employer::find($id);
-        $parent=employer::select('id','Name','Description','id_Location','url_avatar','url_bia','id_employer_detail','email','password')->get()->toArray();
+        $parent=employer::select('id','name','Description','id_Location','url_avatar','url_bia','id_employer_detail','email','password')->get()->toArray();
         return view('viewAdmin.editEmployer',compact('data','parent','id'));
     }
 
@@ -65,9 +73,9 @@ class ControllerEmployer extends Controller
         $file_image_avatar=$req->file('EmployerImageAvatar')->getClientOriginalName();
         $file_image_cover=$req->file('EmployerImageCover')->getClientOriginalName();
         $employer=new employer;
-        $employer->Name=$req->txt_EmployerName;
+        $employer->name=$req->txt_EmployerName;
         $employer->Description=$req->txt_EmployerDecription;
-        $employer->id_Location=$req->txt_EmployerLocation;
+        $employer->id_location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
         $employer->id_employer_detail=$req->txt_IDEmployerDetail;
