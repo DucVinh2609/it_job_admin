@@ -339,6 +339,12 @@ Route::get('admin_reviews_according_IDemployer/{id}',[
 	'as'=>'getreviewsAPIaccordingID',
 	'uses'=>'ControllerEmployer@getReviewsAPIaccordingID'
 ]);
+Route::get('admin_location_according_IDemployer/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getlocationAPIaccordingID',
+	'uses'=>'ControllerEmployer@getLocationAPIaccordingID'
+]);
+
 
 Route::get('admin_employer/add',[
 	'as'=>'getaddEmployer',
@@ -377,6 +383,11 @@ Route::get('admin_employer_detail_api',[
 	'middleware' => 'cors',
 	'as'=>'admin_employer_detail_api',
 	'uses'=>'ControllerEmployerDetail@getEmployerDetailsAPI'
+]);
+Route::get('admin_employer_detail_api/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getemployerDetailAPI',
+	'uses'=>'ControllerEmployerDetail@getEmployerDetailAPI'
 ]);
 Route::get('admin_employer_detail/add',[
 	'as'=>'getaddEmployerDetail',

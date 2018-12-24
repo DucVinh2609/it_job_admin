@@ -34,6 +34,10 @@ class ControllerEmployer extends Controller
         $reviews = employer::find($id)->reviews;
       return $reviews;
     }
+    public function getLocationAPIaccordingID($id){
+        $location = employer::find($id)->location;
+      return $location;
+    }
     public function getAddEmployer(){
         return view('viewAdmin.addEmployer');
     }

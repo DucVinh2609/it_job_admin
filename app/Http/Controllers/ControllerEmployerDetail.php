@@ -26,6 +26,10 @@ class ControllerEmployerDetail extends Controller
         $emmployer_detail = emmployer_detail::all();
         return $emmployer_detail;
     }
+    public function getEmployerDetailAPI($id){
+        $emmployer_detail = emmployer_detail::find($id);
+        return $emmployer_detail;
+    }
 
     public function getAddEmployerDetail(){
         return view('viewAdmin.addEmployerDetail');
