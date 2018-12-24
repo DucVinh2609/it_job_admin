@@ -77,7 +77,6 @@ return [
             'username' => 'drfjsccjttfmqn',
             'password' => 'fc3e0ba54c29f0f8ccc13dd1d7512794af1891e7fc9efc53dee67aa95c90f0ef',
             'charset' => 'utf8',
-            'prefix' => '',
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],

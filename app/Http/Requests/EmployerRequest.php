@@ -32,8 +32,7 @@ class EmployerRequest extends FormRequest
             'EmployerImageAvatar'    =>  'required',
             'EmployerImageCover'    =>  'required',
             'txt_Email'    =>  'required',
-            'txt_Password'    =>  'required',
-            'txt_IDEmployerDetail'    =>  'required'
+            'txt_Password'    =>  'required'
 
       
         ];
@@ -47,8 +46,7 @@ class EmployerRequest extends FormRequest
             'EmployerImageAvatar.required'  =>  'Please up image avatar ',
             'EmployerImageCover.required'  =>  'Please up image cover ',
             'txt_Email.required'  =>  'Please enter Email',
-            'txt_Password.required'  =>  'Please enter Password',
-            'txt_IDEmployerDetail.required'  =>  'Please enter ID Employer Detail'
+            'txt_Password.required'  =>  'Please enter Password'
          
 
 
