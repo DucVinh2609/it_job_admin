@@ -64,7 +64,7 @@ class ControllerEmployer extends Controller
 
     public function getEditEmployer($id){
         $data=employer::find($id);
-        $parent=employer::select('id','name','Description','id_Location','url_avatar','url_bia','id_employer_detail','email','password')->get()->toArray();
+        $parent=employer::select('id','name','Description','id_location','url_avatar','url_bia','id_employer_detail','email','password')->get()->toArray();
         return view('viewAdmin.editEmployer',compact('data','parent','id'));
     }
 
