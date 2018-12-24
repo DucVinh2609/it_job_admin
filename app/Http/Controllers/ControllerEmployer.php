@@ -39,8 +39,8 @@ class ControllerEmployer extends Controller
     }
 
     public function postAddEmployer(EmployerRequest $req){
-        $file_image_avatar=$req->file('EmployerImageAvatar')->getClientOriginalName();
-        $file_image_cover=$req->file('EmployerImageCover')->getClientOriginalName();
+        $file_image_avatar="http://itjob-heroku.herokuapp.com/public/images/".$req->file('EmployerImageAvatar')->getClientOriginalName();
+        $file_image_cover="http://itjob-heroku.herokuapp.com/public/images/".$req->file('EmployerImageCover')->getClientOriginalName();
         $employer=new employer;
         $employer->name=$req->txt_EmployerName;
         $employer->Description=$req->txt_EmployerDecription;
