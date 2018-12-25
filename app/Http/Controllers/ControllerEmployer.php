@@ -27,7 +27,7 @@ class ControllerEmployer extends Controller
       return $employer;
     }
     public function getEmployersAPIaccordingID($id){
-        $employer = employer::find($id);
+        $employer = employer::join('emmployer_detail','employers.id', '=','emmployer_detail.id_employer')->where('employers.id',$id)->get();
       return $employer;
     }
     public function getReviewsAPIaccordingID($id){
@@ -45,11 +45,9 @@ class ControllerEmployer extends Controller
     }
     public function getTotal($id){
        // $posts = posts::find($id);
-        $employer = employer::find($id)->join('posts','employers.id', '=','posts.id_employer')
-        ->join('location','employers.id_location', '=','location.id')
-        //->join('emmployer_detail','employers.id', '=','emmployer_detail.id_employer')
+        $employer = employer::join('location','employers.id_location', '=','location.id')->join('emmployer_detail','employers.id', '=','emmployer_detail.id_employer')->where('employers.id',$id)->get();
         //->select('posts.*','location.name','employers.url_avatar','employers.url_bia')
-        ->get();
+        
 
         return $employer;
     }
@@ -58,16 +56,16 @@ class ControllerEmployer extends Controller
     }
 
     public function postAddEmployer(EmployerRequest $req){
-        $file_image_avatar="http://itjob-heroku.herokuapp.com/public/images/".$req->file('EmployerImageAvatar')->getClientOriginalName();
-        $file_image_cover="http://itjob-heroku.herokuapp.com/public/images/".$req->file('EmployerImageCover')->getClientOriginalName();
+        $file_image_avatar="http://itjob-heroku.herokuapp.com/public/images/employers/".$req->file('EmployerImageAvatar')->getClientOriginalName();
+        $file_image_cover="http://itjob-heroku.herokuapp.com/public/images/employers/".$req->file('EmployerImageCover')->getClientOriginalName();
         $employer=new employer;
         $employer->name=$req->txt_EmployerName;
         $employer->Description=$req->txt_EmployerDecription;
         $employer->id_location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
-        $req->file('EmployerImageAvatar')->move('images/',$file_image_avatar);
-        $req->file('EmployerImageCover')->move('images/',$file_image_cover);
+        $req->file('EmployerImageAvatar')->move('images/employers/',$file_image_avatar);
+        $req->file('EmployerImageCover')->move('images/employers/',$file_image_cover);
         $employer->save();
         return redirect()->action('ControllerEmployer@getEmployers')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete add employer']);
     }

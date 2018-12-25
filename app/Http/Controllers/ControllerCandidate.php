@@ -58,7 +58,7 @@ class ControllerCandidate extends Controller
 
     public function postEditCandidate(CandidateRequest $req,$id){
         $users=users::find($id);
-        $file_image=$req->file('CandidateImage')->getClientOriginalName();
+        $file_image="http://itjob-heroku.herokuapp.com/public/images/users/".$req->file('CandidateImage')->getClientOriginalName();
         $file_cv=$req->file('CandidateCV')->getClientOriginalName();
         $users->name=$req->txt_CandidateName;
         $users->CV=$file_cv;
