@@ -149,7 +149,7 @@
 
                                             <th>ID<a class="fa fa-fw fa-sort" href="{!! url('/api/admin_post') !!}?_sort%5Bcolumn%5D=id&_sort%5Btype%5D=desc"></a></th>
                                             <th>ID User</th>
-                                            <th>ID Employer</th>
+                                            <th>ID Post</th>
                                             <th>CV</th>
 
                                         </tr>
@@ -166,7 +166,7 @@
                                                 {{ $cvs-> id_user }}
                                             </td>
                                             <td >
-                                                {{ $cvs-> id_employer }}
+                                                {{ $cvs-> id_post }}
                                             </td>
                                             <td >
                                                 {{ $cvs-> cv }}

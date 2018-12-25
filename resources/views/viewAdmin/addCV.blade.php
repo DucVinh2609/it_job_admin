@@ -93,7 +93,7 @@
 
                             <div class="form-group  ">
 
-                                <label for="Title" class="col-sm-2  control-label">Name User</label>
+                                <label for="Title" class="col-sm-2  control-label">Cover Letter</label>
 
                                 <div class="col-sm-8">
 
@@ -102,7 +102,7 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                         
-                                        <input type="text"  name="txt_Name" value="" class="form-control name" placeholder="Input Name User" />
+                                        <input type="text"  name="cover_letter" value="" class="form-control name" placeholder="Input Name User" />
 
                                         
                                     </div>
@@ -121,7 +121,7 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                         
-                                        <input type="text"  name="txt_Candidate" value="" class="form-control name" placeholder="Input ID Candidate" />
+                                        <input type="text"  name="user_id" value="" class="form-control name" placeholder="Input ID Candidate" />
 
                                         
                                     </div>
@@ -131,7 +131,7 @@
                             </div>
                             <div class="form-group  ">
 
-                                <label for="Title" class="col-sm-2  control-label">ID Employer</label>
+                                <label for="Title" class="col-sm-2  control-label">ID Post</label>
 
                                 <div class="col-sm-8">
 
@@ -140,7 +140,7 @@
 
                                         <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
                                         
-                                        <input type="text"  name="txt_Employer" value="" class="form-control name" placeholder="Input ID Employer" />
+                                        <input type="text"  name="job_id" value="" class="form-control name" placeholder="Input ID Post" />
 
                                         
                                     </div>
@@ -155,7 +155,7 @@
                                 <div class="col-sm-8">
 
 
-                                    <input type="file" class="image" name="CV"  />
+                                    <input type="file" class="image" name="cv"  />
 
 
                                 </div>

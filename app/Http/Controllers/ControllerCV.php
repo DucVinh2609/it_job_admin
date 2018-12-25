@@ -32,26 +32,24 @@ class ControllerCV extends Controller
     }
 
     public function postAddCV(CVRequest $req){
-        $file_cv=$req->file('CV')->getClientOriginalName();
+        $file_cv=$req->file('cv')->getClientOriginalName();
         $cv=new cv;
-        $cv->name=$req->txt_Name;
-        $cv->id_user=$req->txt_Candidate;
-        $cv->id_employer=$req->txt_Employer;
+        $cv->id_user=$req->user_id;
+        $cv->id_post=$req->job_id;
+        $cv->cover_letter=$req->cover_letter;
         $cv->cv=$file_cv;
-        $req->file('CV')->move('CV/',$file_cv);
+        $req->file('cv')->move('CV/',$file_cv);
         $cv->save();
         return redirect()->action('ControllerCV@getCV')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete add CV']);
     }
-    public function postAddCVAPI($name,$id_user,$id_employer,$cv){
-        $file_cv=$req->file($cv)->getClientOriginalName();
+    public function postAddCVAPI(CVRequest $req){
         $cv=new cv;
-        $cv->name=$name;
-        $cv->id_user=$id_user;
-        $cv->id_employer=$id_employer;
-        $cv->cv=$file_cv;
-        $req->file($cv)->move('CV/',$file_cv);
+        $cv->id_user=$req->user_id;
+        $cv->id_post=$req->job_id;
+        $cv->cover_letter=$req->cover_letter;
+        $cv->cv=$req->cv;
         $cv->save();
-         return back();
+        return redirect()->back();
     }
 
 }

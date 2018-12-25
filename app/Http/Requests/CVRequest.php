@@ -26,10 +26,10 @@ class CVRequest extends FormRequest
     public function rules()
     {
         return [
-            'txt_Name'  => 'required',
-            'txt_Candidate'    =>  'required',
-            'txt_Employer'    =>  'required',
-            'CV'    =>  'required'
+            'user_id'    =>  'required',
+            'job_id'    =>  'required',
+            'cv'    =>  'required',
+            'cover_letter'    =>  'required'
 
       
         ];
@@ -37,11 +37,12 @@ class CVRequest extends FormRequest
 
     public function messages(){
         return [
-            'txt_Name.required'  =>  'Please enter Name User  ',
-            'txt_Candidate.required'  =>  'Please enter ID Candidate ',
-            'txt_Employer.required'  =>  'Please enter ID Employer ',
-            'CV.required'  =>  'Please enter Country '
             
+            'user_id.required'  =>  'Please enter Name User  ',
+            'job_id.required'  =>  'Please enter ID Candidate ',
+            'cv.required'  =>  'Please enter ID Employer ',
+            'cover_letter.required'  =>  'Please enter ID Employer '
+
          
 
 

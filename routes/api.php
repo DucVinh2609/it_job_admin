@@ -354,6 +354,7 @@ Route::post('admin_cv/add',[
 	'uses'=>'ControllerCV@postAddCV'
 ]);
 Route::post('admin_cv_api/add',[
+	'middleware' => 'cors',
 	'as'=>'postaddCVAPI',
 	'uses'=>'ControllerCV@postAddCVAPI'
 ]);
