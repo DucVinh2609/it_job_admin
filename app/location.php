@@ -8,8 +8,7 @@ class location extends Model
 {
     protected $table="location";
     public $timestamps=false;
-    public function employer()
-    {
-        return $this->belongsTo('App\employer');
+    public function  employer(){
+        return $this->hasOne('App\employer','id_location','id');
     }
 }

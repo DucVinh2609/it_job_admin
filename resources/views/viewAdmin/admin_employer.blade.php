@@ -110,7 +110,6 @@
                                 <th>Location</th>
                                 <th>Image Avatar</th>
                                 <th>Image Cover</th>
-                                <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -135,9 +134,6 @@
                                 </td>
                                 <td >
                                     {{ $employers-> url_bia }}
-                                </td>
-                                <td >
-                                    {{ $employers-> email}}
                                 </td>
                                 
                                 <td >

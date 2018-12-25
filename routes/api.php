@@ -251,6 +251,11 @@ Route::get('admin_skill_api',[
 	'as'=>'admin_skill_api',
 	'uses'=>'SkillController@getSkillAPI'
 ]);
+Route::get('admin_skill_api/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getskillaccordingID',
+	'uses'=>'SkillController@getSkillaccordingID'
+]);
 
 Route::get('admin_skill/add',[
 	'as'=>'getaddSkill',
@@ -289,6 +294,16 @@ Route::get('admin_location_api',[
 	'middleware' => 'cors',
 	'as'=>'admin_location_api',
 	'uses'=>'ControllerLocation@getLocationAPI'
+]);
+Route::get('admin_location_according_IDemployer/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getlocationAPIaccordingID',
+	'uses'=>'ControllerLocation@getLocationAPIaccordingID'
+]);
+Route::get('admin_location_api/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getlocationaccordingID',
+	'uses'=>'ControllerLocation@getLocationaccordingID'
 ]);
 
 Route::get('admin_location/add',[
@@ -339,10 +354,20 @@ Route::get('admin_reviews_according_IDemployer/{id}',[
 	'as'=>'getreviewsAPIaccordingID',
 	'uses'=>'ControllerEmployer@getReviewsAPIaccordingID'
 ]);
+Route::get('admin_posts_according_IDemployer/{id}',[
+	'middleware' => 'cors',
+	'as'=>'getpostsAPIaccordingID',
+	'uses'=>'ControllerEmployer@getPostsAPIaccordingID'
+]);
 Route::get('admin_location_according_IDemployer/{id}',[
 	'middleware' => 'cors',
-	'as'=>'getlocationAPIaccordingID',
-	'uses'=>'ControllerEmployer@getLocationAPIaccordingID'
+	'as'=>'getlocation',
+	'uses'=>'ControllerEmployer@getLocation'
+]);
+Route::get('admin_jobs_detail/{id}',[
+	'middleware' => 'cors',
+	'as'=>'gettotal',
+	'uses'=>'ControllerEmployer@getTotal'
 ]);
 
 

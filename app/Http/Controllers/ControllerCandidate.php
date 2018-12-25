@@ -37,11 +37,9 @@ class ControllerCandidate extends Controller
         $users->name=$req->txt_CandidateName;
         $users->CV=$file_cv;
         $users->cover_letter=$req->txt_CandidateCoverLetter;
-        $users->email=$req->txt_Email;
-        $users->password=$req->txt_Password;
         $users->image=$file_image;
         $req->file('CandidateImage')->move('images/users/',$file_image);
-        $req->file('CandidateCV')->move('images/users',$file_cv);
+        $req->file('CandidateCV')->move('CV',$file_cv);
         $users->save();
         return redirect()->action('ControllerCandidate@getCandidates')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete add Candidate']);
     }
@@ -54,7 +52,7 @@ class ControllerCandidate extends Controller
 
     public function getEditCandidate($id){
         $data=users::find($id);
-        $parent=users::select('id','name','CV','cover_letter','email','password','image')->get()->toArray();
+        $parent=users::select('id','name','CV','cover_letter','image')->get()->toArray();
         return view('viewAdmin.editCandidate',compact('data','parent','id'));
     }
 
@@ -65,11 +63,9 @@ class ControllerCandidate extends Controller
         $users->name=$req->txt_CandidateName;
         $users->CV=$file_cv;
         $users->cover_letter=$req->txt_CandidateCoverLetter;
-        $users->email=$req->txt_Email;
-        $users->password=$req->txt_Password;
         $users->image=$file_image;
         $req->file('CandidateImage')->move('images/users/',$file_image);
-        $req->file('CandidateCV')->move('images/users',$file_cv);
+        $req->file('CandidateCV')->move('CV',$file_cv);
         $users->save();
         return redirect()->action('ControllerCandidate@getCandidates')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete edit Candidate']);
 

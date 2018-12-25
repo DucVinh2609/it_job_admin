@@ -108,7 +108,6 @@
                                 <th>Name</th>
                                 <th>CV</th>
                                 <th>Cover letter</th>
-                                <th>Email</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -128,9 +127,6 @@
                                 </td>
                                 <td >
                                     {{ $user-> cover_letter }}
-                                </td>
-                                <td >
-                                    {{ $user-> email}}
                                 </td>
                                 <td >
                                     {{ $user-> image }}

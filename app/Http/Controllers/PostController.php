@@ -11,6 +11,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\posts;
 use App\Http\Requests\PostRequest;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -28,8 +29,10 @@ class PostController extends Controller
         return $posts;
     }
     public function getPostsAPIaccordingID($id){
-        $posts = posts::find($id);
-        return $posts;
+       // $posts = posts::find($id);
+        $post = posts::join('employers','employers.id', '=','posts.id_employer')->where('posts.id',$id)->get();
+
+        return $post;
     }
     
 

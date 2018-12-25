@@ -34,9 +34,24 @@ class ControllerEmployer extends Controller
         $reviews = employer::find($id)->reviews;
       return $reviews;
     }
-    public function getLocationAPIaccordingID($id){
-        $location = employer::find($id)->location;
+    public function getPostsAPIaccordingID($id){
+        $posts = employer::find($id)->posts;
+      return $posts;
+    }
+    public function getLocation($id){
+        $employer = employer::find($id);
+        $location = employer::find($id)->location()->where('id',$employer->id_location);
       return $location;
+    }
+    public function getTotal($id){
+       // $posts = posts::find($id);
+        $employer = employer::find($id)->join('posts','employers.id', '=','posts.id_employer')
+        ->join('location','employers.id_location', '=','location.id')
+        //->join('emmployer_detail','employers.id', '=','emmployer_detail.id_employer')
+        //->select('posts.*','location.name','employers.url_avatar','employers.url_bia')
+        ->get();
+
+        return $employer;
     }
     public function getAddEmployer(){
         return view('viewAdmin.addEmployer');
@@ -51,8 +66,6 @@ class ControllerEmployer extends Controller
         $employer->id_location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
-        $employer->email=$req->txt_Email;
-        $employer->password=$req->txt_Password;
         $req->file('EmployerImageAvatar')->move('images/',$file_image_avatar);
         $req->file('EmployerImageCover')->move('images/',$file_image_cover);
         $employer->save();
@@ -67,7 +80,7 @@ class ControllerEmployer extends Controller
 
     public function getEditEmployer($id){
         $data=employer::find($id);
-        $parent=employer::select('id','name','Description','id_location','url_avatar','url_bia','email','password')->get()->toArray();
+        $parent=employer::select('id','name','Description','id_location','url_avatar','url_bia')->get()->toArray();
         return view('viewAdmin.editEmployer',compact('data','parent','id'));
     }
 
@@ -81,8 +94,6 @@ class ControllerEmployer extends Controller
         $employer->id_location=$req->txt_EmployerLocation;
         $employer->url_avatar=$file_image_avatar;
         $employer->url_bia=$file_image_cover;
-        $employer->email=$req->txt_Email;
-        $employer->password=$req->txt_Password;
         $req->file('EmployerImageAvatar')->move('images/',$file_image_avatar);
         $req->file('EmployerImageCover')->move('images/',$file_image_cover);
         $employer->save();

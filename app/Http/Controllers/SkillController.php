@@ -26,6 +26,10 @@ class SkillController extends Controller
         $Skill = Skill::all();
         return $Skill;
     }
+    public function getSkillaccordingID($id){
+        $Skill = Skill::find($id)->name;
+        return $Skill;
+    }
 
 
     public function getAddSkill(){

@@ -26,7 +26,14 @@ class ControllerLocation extends Controller
         $location = location::all();
         return $location;
     }
-
+    public function getLocationAPIaccordingID($id){
+        $employer = location::find($id)->employer;
+      return $employer;
+    }
+    public function getLocationaccordingID($id){
+        $location = location::find($id)->name;
+      return $location;
+    }
 
     public function getAddLocation(){
         return view('viewAdmin.addLocation');

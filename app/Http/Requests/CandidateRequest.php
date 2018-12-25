@@ -29,8 +29,6 @@ class CandidateRequest extends FormRequest
             'txt_CandidateName'  => 'required',
             'CandidateCV'    =>  'required',
             'txt_CandidateCoverLetter'    =>  'required',
-            'txt_Email'    =>  'required',
-            'txt_Password'    =>  'required',
             'CandidateImage'    =>  'required'
 
       
@@ -42,8 +40,6 @@ class CandidateRequest extends FormRequest
             'txt_CandidateName.required'  =>  'Please enter Name  ',
             'CandidateCV.required'  =>  'Please up CV ',
             'txt_CandidateCoverLetter.required'  =>  'Please enter Cover letter ',
-            'txt_Email.required'  =>  'Please uenter Email',
-            'txt_Password.required'  =>  'Please enter Password ',
             'CandidateImage.required'  =>  'Please up Image'
 
 

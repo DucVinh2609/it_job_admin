@@ -30,9 +30,7 @@ class EmployerRequest extends FormRequest
             'txt_EmployerDecription'    =>  'required',
             'txt_EmployerLocation'    =>  'required',
             'EmployerImageAvatar'    =>  'required',
-            'EmployerImageCover'    =>  'required',
-            'txt_Email'    =>  'required',
-            'txt_Password'    =>  'required'
+            'EmployerImageCover'    =>  'required'
 
       
         ];
@@ -44,9 +42,7 @@ class EmployerRequest extends FormRequest
             'txt_EmployerDecription.required'  =>  'Please enter descriptions ',
             'txt_EmployerLocation.required'  =>  'Please enter location ',
             'EmployerImageAvatar.required'  =>  'Please up image avatar ',
-            'EmployerImageCover.required'  =>  'Please up image cover ',
-            'txt_Email.required'  =>  'Please enter Email',
-            'txt_Password.required'  =>  'Please enter Password'
+            'EmployerImageCover.required'  =>  'Please up image cover '
          
 
 

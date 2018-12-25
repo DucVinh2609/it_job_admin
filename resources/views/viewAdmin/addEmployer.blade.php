@@ -184,44 +184,7 @@
 
                                 </div>
                             </div>
-                            <div class="form-group  ">
-
-                                <label for="en__name" class="col-sm-2  control-label">Email</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-
-                                        <input type="text" id="en__name" name="txt_Email" value="" class="form-control en__name" placeholder="Input Email" />
-
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <div class="form-group  ">
-
-                                <label for="en__name" class="col-sm-2  control-label">Password</label>
-
-                                <div class="col-sm-8">
-
-
-                                    <div class="input-group">
-
-                                        <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
-
-                                        <input type="text" id="en__name" name="txt_Password" value="" class="form-control en__name" placeholder="Input Password" />
-
-
-                                    </div>
-
-
-                                </div>
-                            </div>
+                            
                             
 
                         </div>
