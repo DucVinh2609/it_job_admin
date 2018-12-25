@@ -65,6 +65,14 @@
               </span>
             </a>
           </li>
+          <li>
+            <a href="{!! url('/api/admin_cv/') !!}">
+              <i class="fa fa-map-marker">
+              </i>
+              <span>CV
+              </span>
+            </a>
+          </li>
         </ul>
       </li>
       <li class="treeview">

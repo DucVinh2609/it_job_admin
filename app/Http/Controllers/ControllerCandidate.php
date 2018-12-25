@@ -39,7 +39,7 @@ class ControllerCandidate extends Controller
         $users->cover_letter=$req->txt_CandidateCoverLetter;
         $users->image=$file_image;
         $req->file('CandidateImage')->move('images/users/',$file_image);
-        $req->file('CandidateCV')->move('CV',$file_cv);
+        $req->file('CandidateCV')->move('CV/',$file_cv);
         $users->save();
         return redirect()->action('ControllerCandidate@getCandidates')->with(['flash_level'=>'success','flash_message'=>'Success !! Complete add Candidate']);
     }

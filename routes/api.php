@@ -333,6 +333,34 @@ Route::get('admin_location/delete/{id}',[
 
 // end Location
 
+// CV
+
+Route::get('admin_cv',[
+	'as'=>'admin_cv',
+	'uses'=>'ControllerCV@getCV'
+]);
+Route::get('admin_cv_api',[
+	'middleware' => 'cors',
+	'as'=>'admin_cv_api',
+	'uses'=>'ControllerCV@getCVAPI'
+]);
+Route::get('admin_cv/add',[
+	'as'=>'getaddCV',
+	'uses'=>'ControllerCV@getAddCV'
+]);
+
+Route::post('admin_cv/add',[
+	'as'=>'postaddCV',
+	'uses'=>'ControllerCV@postAddCV'
+]);
+Route::post('admin_cv_api/add',[
+	'as'=>'postaddCVAPI',
+	'uses'=>'ControllerCV@postAddCVAPI'
+]);
+
+
+// end CV
+
 // Employer
 
 Route::get('admin_employer',[
